@@ -10,10 +10,10 @@ fn shift_by_one() {
     assert_eq!(text, "Uijt ibwjoh ifbse, uif tiffq gmfe joup uif qmbjot.")
 }
 #[test]
-fn shift_by_minus_one() {
+fn shift_by_minus_four() {
     let mut text = HORSE_FABLE.to_owned();
-    encrypt(&mut text, -1).unwrap();
-    assert_eq!(text, "Sghr gzuhmf gdzqc, sgd rgddo ekdc hmsn sgd okzhmr.")
+    encrypt(&mut text, -4).unwrap();
+    assert_eq!(text, "Pdeo dwrejc dawnz, pda odaal bhaz ejpk pda lhwejo.")
 }
 #[test]
 fn non_ascii_error() {

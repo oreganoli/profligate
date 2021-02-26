@@ -26,8 +26,16 @@ pub fn encrypt(text: &mut str, key: i8) -> Result<(), CaesarError> {
             b'A'..=b'Z' => {
                 *byte = ((*byte as i8 + shift) as u8 % b'A') + b'A';
             }
-            _ => (),
-        };
+            _ => continue,
+        }
+        match byte {
+            b'a'..=b'z' | b'A'..=b'Z' => (),
+            _ => {
+                panic!(
+                    "The byte got shifted to a non-letter position. This should not be happening."
+                )
+            }
+        }
     }
     Ok(())
 }
