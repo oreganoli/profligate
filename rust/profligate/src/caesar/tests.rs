@@ -10,6 +10,12 @@ fn shift_by_one() {
     assert_eq!(text, "Uijt ibwjoh ifbse, uif tiffq gmfe joup uif qmbjot.")
 }
 #[test]
+fn shift_by_minus_one() {
+    let mut text = HORSE_FABLE.to_owned();
+    encrypt(&mut text, -1).unwrap();
+    assert_eq!(text, "Sghr gzuhmf gdzqc, sgd rgddo ekdc hmsn sgd okzhmr.")
+}
+#[test]
 fn non_ascii_error() {
     match encrypt(&mut HORSE_FABLE_UTF.to_owned(), 8) {
         Err(CaesarError::NonAscii) => (),
