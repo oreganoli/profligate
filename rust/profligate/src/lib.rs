@@ -1,2 +1,2 @@
 /// Caesar cipher code.
-mod caesar;
+pub mod caesar;
