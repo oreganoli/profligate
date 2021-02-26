@@ -13,12 +13,11 @@ pub fn encrypt(text: &mut str, key: i8) -> Result<(), CaesarError> {
     if text.chars().find(|c| !c.is_ascii()).is_some() {
         return Err(CaesarError::NonAscii);
     }
+    let shift = key % ALPHABET_LENGTH as i8;
     let bytes = unsafe {
-        // We've already errored out if the text isn't ASCII, so manipulating its bytes in place like a C *char should be safe.
+        // We've already errored out if the text isn't ASCII, so manipulating its bytes in place like those of a C *char should be safe.
         text.as_bytes_mut()
     };
-    let shift = key % ALPHABET_LENGTH as i8;
-    dbg!(shift);
     for byte in bytes {
         match byte {
             b'a'..=b'z' => {
