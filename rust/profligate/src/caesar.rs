@@ -11,5 +11,8 @@ enum CaesarError {
 }
 /// Encrypt a string of text with the given key.
 fn encrypt(text: &str, key: u32) -> Result<String, CaesarError> {
+    if text.chars().find(|c| !c.is_ascii()).is_some() {
+        return Err(CaesarError::NonAscii);
+    }
     unimplemented!()
 }
