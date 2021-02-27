@@ -2,10 +2,12 @@
 mod tests;
 const ALPHABET_LENGTH: i16 = 26;
 /// Error type for Caesar cipher encryption and decryption.
-#[derive(Debug)]
+#[derive(Debug, PartialEq)]
 pub enum CaesarError {
-    // The string being operated on isn't valid ASCII.
+    /// The string being operated on isn't valid ASCII.
     NonAscii,
+    /// The automatically-decrypted plaintext couldn't be validated.
+    PlaintextInvalid,
 }
 /// Encrypt a string of text with the given key. This operation happens in place to cut down on allocations.
 pub fn encrypt(text: &mut str, key: i16) -> Result<(), CaesarError> {
