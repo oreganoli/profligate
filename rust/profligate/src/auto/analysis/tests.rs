@@ -14,3 +14,10 @@ fn most_frequent() {
     assert_eq!(most_frequent_char(&text_4), b'b');
     assert_eq!(most_frequent_char(&text_5), b'a');
 }
+
+#[test]
+fn shift_computation() {
+    let shifts = compute_shifts(b'f', &ENGLISH_FREQ_TABLE);
+    assert_eq!(shifts[0], 1);
+    assert_eq!(shifts[25], -20);
+}
