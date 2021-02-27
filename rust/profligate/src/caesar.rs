@@ -21,6 +21,10 @@ pub fn encrypt(text: &mut str, key: i16) -> Result<(), CaesarError> {
     }
     Ok(())
 }
+/// Decrypt a string of text with the given key. Under the hood, this is the same as encrypting with the negative key, thanks to the Caesar cipher's properties.
+pub fn decrypt(text: &mut str, key: i16) -> Result<(), CaesarError> {
+    encrypt(text, -key)
+}
 /// This function applies a Caesar cipher to a raw ASCII byte within the English alphabet. It panics on non-letter bytes.
 /// Note that the ASCII range is within the lower half of a `u8`, and thus also within the positive half of an `i8`.
 fn shift_byte(byte: &mut u8, shift: i16) {
