@@ -9,3 +9,12 @@ fn crib_validation() {
     assert!(val_1.validate(plaintext));
     assert!(!val_2.validate(plaintext));
 }
+
+#[test]
+fn english_validation() {
+    let text_1 = "A quick brown fox jumps over the lazy dog";
+    let text_2 = "In hac scriptura sunt tantum litterae anglicae, sed Latine scripta est.";
+    let eng_validator = WordListValidator::new(WordList::new(ENGLISH_WORDS));
+    assert!(eng_validator.validate(text_1));
+    assert!(!eng_validator.validate(text_2));
+}
