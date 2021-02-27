@@ -20,6 +20,18 @@ fn shift_by_minus_four() {
 }
 
 #[test]
+fn wraparound() {
+    let mut text_1 = HORSE_FABLE.to_owned();
+    let mut text_2 = text_1.clone();
+    encrypt(&mut text_1, -4).unwrap();
+    encrypt(&mut text_2, 22).unwrap();
+    assert_eq!(text_1, text_2);
+    encrypt(&mut text_1, 34).unwrap();
+    encrypt(&mut text_2, 8).unwrap();
+    assert_eq!(text_1, text_2);
+}
+
+#[test]
 fn decryption() {
     let mut text = HORSE_FABLE.to_owned();
     encrypt(&mut text, 8).unwrap();
