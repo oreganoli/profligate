@@ -1,7 +1,10 @@
+#[cfg(test)]
 use super::*;
 
+#[cfg(test)]
 const HORSE_FABLE: &str = "This having heard, the sheep fled into the plains.";
 /// This string contains UTF-8 characters that should trigger an error.
+#[cfg(test)]
 const HORSE_FABLE_UTF: &str = "To usłyszawszy, owca uciekła na równinę.";
 #[test]
 fn shift_by_one() {
