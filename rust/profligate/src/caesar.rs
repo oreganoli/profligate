@@ -1,3 +1,4 @@
+#[cfg(test)]
 mod tests;
 const ALPHABET_LENGTH: i16 = 26;
 /// Error type for Caesar cipher encryption and decryption.
