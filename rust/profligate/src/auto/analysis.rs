@@ -2,6 +2,7 @@
 mod tests;
 
 /// Returns the most frequently occurring character in the given string. Case-insensitive, returns a lowercase char; assumes the text is ASCII.
+/// Behaves in a deterministic way - should two or more Latin letters be equally frequent, the first one will be assumed.
 pub fn most_frequent_char(text: &str) -> u8 {
     let mut table = [0; 26];
     let bytes = text.as_bytes();
