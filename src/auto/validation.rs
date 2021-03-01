@@ -15,6 +15,9 @@ impl CribValidator {
     pub fn new<S: Into<String>>(crib: S) -> Self {
         Self { crib: crib.into() }
     }
+    pub fn set_crib<S: Into<String>>(&mut self, crib: S) {
+        self.crib = crib.into();
+    }
 }
 impl Validator for CribValidator {
     fn validate(&self, text: &str) -> bool {
@@ -45,6 +48,12 @@ impl<'a> WordListValidator<'a> {
             } else {
                 0.75
             },
+        }
+    }
+    /// Adjust threshold. Values outside of (0; 1] will be discarded.
+    pub fn set_threshold(&mut self, threshold: f32) {
+        if threshold > 0.0 && threshold <= 1.0 {
+            self.threshold = threshold;
         }
     }
 }
