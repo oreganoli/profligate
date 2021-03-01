@@ -10,6 +10,22 @@
 - [WebAssembly bindings](https://gitlab.com/oreganoli/profligate-front-rs/)
 - [React frontend](https://gitlab.com/oreganoli/profligate-front/)
 
+## Not supported
+- arbitrary UTF-8 input text
+- alphabets other than English Latin
+
 ## Live example
 
 The React frontend is available at https://zen-khorana-764c54.netlify.app/.
+
+## Building and testing
+
+Install the Rust toolchain for your platform and use
+
+```
+cargo build
+```
+
+```
+cargo test
+```
