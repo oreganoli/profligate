@@ -3,7 +3,7 @@ name = "profligate"
 description = "Caesar cipher library with automatic letter-frequency decryption"
 repository = "https://github.com/oreganoli/profligate/"
 license = "MIT"
-version = "0.1.0"
+version = "0.2.0"
 authors = ["oreganoli <3611916+oreganoli@users.noreply.github.com>"]
 edition = "2018"
 
