@@ -62,7 +62,7 @@ impl<'a> Validator for WordListValidator<'a> {
         let mut total_words = 0f32;
         let mut valid_words = 0f32;
         text.split(|char| match char {
-            'a'..='z' | 'A'..='Z' => false,
+            'a'..='z' | 'A'..='Z' | '-' | '\'' => false,
             // split on characters that aren't ASCII letters
             _ => true,
         })
