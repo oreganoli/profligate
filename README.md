@@ -1,4 +1,4 @@
-# `profligate`
+# `profligate` ![Build status](https://github.com/oreganoli/profligate/actions/workflows/rust.yml/badge.svg)
 
 `profligate` is a Caesar cipher library I'm working on as part of my university coursework.
 
