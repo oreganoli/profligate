@@ -6,7 +6,7 @@
 
 - encryption and decryption with a manually specified key
 - automatic decryption based on known plaintext
-- automatic decryption based on English letter frequency tables
+- automatic decryption based on English letter frequency tables and dictionary
 - [WebAssembly bindings](https://gitlab.com/oreganoli/profligate-front-rs/)
 - [React frontend](https://gitlab.com/oreganoli/profligate-front/)
 
